@@ -11,6 +11,9 @@ manifest:
       ports:
         80: 5000
       whitelist: 127.0.0.0/16
+      annotations:
+        - foo/bar="baz"
+        - foo/baz=*
   resources:
     one:
       type: postgres

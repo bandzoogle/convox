@@ -27,6 +27,9 @@ func TestManifestLoad(t *testing.T) {
 						Target:   5000,
 					},
 				},
+				Annotations: []string{
+					"service.beta.kubernetes.io/aws-load-balancer-proxy-protocol=\"*\"",
+				},
 				Service: "api",
 			},
 			manifest.Balancer{
@@ -367,6 +370,7 @@ func TestManifestLoad(t *testing.T) {
 		"balancers.alternate.service",
 		"balancers.alternate.whitelist",
 		"balancers.main",
+		"balancers.main.annotations",
 		"balancers.main.ports",
 		"balancers.main.ports.3000",
 		"balancers.main.ports.3000.port",

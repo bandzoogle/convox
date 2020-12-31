@@ -85,6 +85,9 @@ func (p *Provider) templateHelpers() template.FuncMap {
 		"lower": func(s string) string {
 			return strings.ToLower(s)
 		},
+		"quoted": func(s string) template.HTML {
+			return template.HTML(fmt.Sprintf("%q", strings.Trim(s, "\"")))
+		},
 		"quoteEscape": func(s string) string {
 			return strings.ReplaceAll(s, "\"", "\\\"")
 		},
